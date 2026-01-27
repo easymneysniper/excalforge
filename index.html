@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <link rel="icon" type="image/png" href="logo_official.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ExcalForge — Уеб сайтове, дизайн и анимации</title>
+  <meta name="description" content="Портфолио сайт — изработвам модерни уеб сайтове с анимации, UX и висока скорост." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="top"></div>
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span class="bar"></span></div>
+
+  <header class="header">
+    <a class="brand" href="#top">
+      <img src="logo_official.png" alt="ExcalForge logo" class="logo" />
+    </a>
+
+    <nav class="nav" aria-label="Основна навигация">
+      <a href="#work"><strong>Проекти</strong></a>
+      <a href="#about"><strong>За мен</strong></a>
+      <a href="#contact"><strong>Контакт</strong></a>
+    </nav>
+
+    <div class="headerActions">
+      <button class="iconBtn" id="themeBtn" aria-label="Смяна на тема">
+        <span class="icon">☾</span>
+      </button>
+      <button class="cta primary magnetic" data-magnetic>
+        <span class="shine"></span>
+        <a href="#contact">Започваме</a>
+      </button>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+      <a href="#work">Проекти</a>
+      <a href="#about">За мен</a>
+      <a href="#contact">Контакт</a>
+      <a class="mobileCTA" href="#contact">Започваме</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container heroGrid">
+        <div class="heroText">
+          <div class="kicker reveal">
+            <span class="dot"></span>
+            <span>Дигитални решения, <span class="grad"></span><strong><span class="grad"> съобразени с Вашите цели</span></strong></span>
+          </div>
+
+          <h1 class="headline reveal">
+            Изработка на  
+            <span class="grad">уебсайтове с фокус върху качество</span>
+          </h1>
+
+          <p class="sub reveal">
+            Проектирам и разработвам бързи, модерни и надеждни уебсайтове – от лендинг страници до комплексни решения, с ясен 
+            фокус върху дизайн, производителност и реална стойност за клиента.
+          </p>
+
+          <div class="heroCtas reveal">
+            <button class="cta primary magnetic" data-magnetic>
+              <span class="shine"></span>
+              <a href="#work">Виж проекти</a>
+            </button>
+            <button class="cta ghost magnetic" data-magnetic>
+              <a href="#about">Кой съм аз</a>
+            </button>
+          </div>
+
+          <div class="stats reveal">
+            <div class="stat">
+              <div class="num" data-count="100">0</div>
+              <div class="label">% custom код</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="3">0</div>
+              <div class="label">год. опит</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="95">0</div>
+              <div class="label">% доволни</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCardWrap reveal">
+          <div class="tiltCard" data-tilt>
+            <div class="tiltGlow"></div>
+            <div class="tiltInner">
+              <div class="avatar">
+                <img src="giphy.gif" alt="Твоето име" />
+                <div class="avatarPlaceholder">
+                  <span>Твоя снимка</span>
+                </div>
+              </div>
+
+              <div class="mini">
+                <div class="chip">Front-end</div>
+                <div class="chip">Back-end</div>
+                <div class="chip">UI/UX</div>
+                <div class="chip">Анимации</div>
+              </div>
+
+              <div class="cardText">
+                <h3><strong>Уебсайтове, изградени с внимание към детайла</strong></h3>
+                <p>Работя с фокус върху плавни взаимодействия, ясна структура и изчистен визуален език. Всеки проект е оптимизиран за бързина, 
+                  достъпност и отлично потребителско изживяване на всички устройства.</p>
+              </div>
+
+              <!-- <div class="socialRow">
+                <a class="soc" href="https://www.instagram.com/mariostanoychev/" aria-label="Instagram">IG</a>
+                <a class="soc" href="#" aria-label="LinkedIn">in</a>
+                <a class="soc" href="#" aria-label="GitHub">GH</a>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="floatingBadges" aria-hidden="true">
+            <!-- <div class="badge">⚡ Super fast</div> -->
+            <!-- <div class="badge">✨ Motion</div> -->
+            <!-- <div class="badge">🧠 UX</div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="scrollHint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="mouse"><i></i></div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>Избрани проекти</h2>
+        </div>
+
+        <div class="cards">
+          <article class="workCard reveal" data-hover>
+            <div class="workMedia">
+              <div class="workMock mock1"></div>
+              <div class="workGlow"></div>
+            </div>
+            <div class="workBody">
+              <h3>Личен бранд сайт</h3>
+              <p>One-page презентация с табове, анимации и контакт.</p>
+              <div class="workTags">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <div class="workActions">
+                <a class="link" href="#">Виж демо →</a>
+                <a class="link ghost" href="#">Кейс стъди</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="workCard reveal" data-hover>
+            <div class="workMedia">
+              <div class="workMock mock2"></div>
+              <div class="workGlow"></div>
+            </div>
+            <div class="workBody">
+              <h3>Бизнес landing page</h3>
+              <p>Конверсионен дизайн с ясно CTA и микро-интеракции.</p>
+              <div class="workTags">
+                <span>UX</span><span>SEO</span><span>Speed</span>
+              </div>
+              <div class="workActions">
+                <a class="link" href="#">Виж демо →</a>
+                <a class="link ghost" href="#">Резултати</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="workCard reveal" data-hover>
+            <div class="workMedia">
+              <div class="workMock mock3"></div>
+              <div class="workGlow"></div>
+            </div>
+            <div class="workBody">
+              <h3>Креативно портфолио</h3>
+              <p>Motion-heavy секции, паралакс и smooth reveal.</p>
+              <div class="workTags">
+                <span>Motion</span><span>3D</span><span>Brand</span>
+              </div>
+              <div class="workActions">
+                <a class="link" href="#">Виж демо →</a>
+                <a class="link ghost" href="#">Процес</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- <div class="marquee reveal" aria-hidden="true">
+          <div class="track">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animations</span><span>UX</span><span>Python</span><span>Performance</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animations</span><span>UX</span><span>Python</span><span>Performance</span>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <h2>За мен</h2>
+        </div>
+
+        <div class="aboutGrid">
+          <div class="aboutCard reveal">
+            <div class="tabs" role="tablist" aria-label="Табове за описание">
+              <button class="tab isActive" role="tab" aria-selected="true" data-tab="t1">Кой съм</button>
+              <button class="tab" role="tab" aria-selected="false" data-tab="t2">Как работя</button>
+              <button class="tab" role="tab" aria-selected="false" data-tab="t3">Умения</button>
+            </div>
+
+            <div class="tabPanels">
+              <div class="panel isActive" id="t1" role="tabpanel">
+                <h3><span class="grad"><strong>ExcalForge</strong></span></h3>
+                <p>
+                  Разработвам уебсайтове за бизнеси и брандове, които търсят яснота, стабилност и дългосрочна стойност. 
+                  Работя с фокус върху изчистен дизайн, логична структура и прецизна техническа реализация.
+                </p>
+                <ul class="bullets">
+                  <li>Сертифицирано обучение в елитна академия</li>
+                  <li>Бакалавър по „Софтуерно инженерство“</li>
+                  <li>Постоянно развитие и работа с актуални технологии и практики</li>
+                </ul>
+              </div>
+
+              <div class="panel" id="t2" role="tabpanel">
+                <h3>Процесът ми включва следните стъпки:</h3>
+                <ol class="steps">
+                  <li><strong>Бриф</strong> — дефиниране на целите, аудиторията и изискванията</li>
+                  <li><strong>План</strong> — изграждане на ясна структура и технически план</li>
+                  <li><strong>Разработка</strong> — реализация с фокус върху качество и стабилност</li>
+                  <li><strong>Deploy</strong> — настройка на хостинг и пускане на проекта</li>
+                </ol>
+                <div class="note">
+                  Предлагам качествена изработка и постоянна поддръжка на Вашият сайт
+                </div>
+              </div>
+
+              <div class="panel" id="t3" role="tabpanel">
+                <h3>Умения</h3>
+                <div class="skillGrid">
+                  <div class="skill">
+                    <div class="skillTop">
+                      <span>Back-end</span><span class="pct">92%</span>
+                    </div>
+                    <div class="meter"><i style="width:92%"></i></div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="skillTop">
+                      <span>Front-end</span><span class="pct">85%</span>
+                    </div>
+                    <div class="meter"><i style="width:85%"></i></div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="skillTop">
+                      <span>UI/UX</span><span class="pct">85%</span>
+                    </div>
+                    <div class="meter"><i style="width:85%"></i></div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="skillTop">
+                      <span>Motion / Interactions</span><span class="pct">90%</span>
+                    </div>
+                    <div class="meter"><i style="width:90%"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="aboutAside reveal">
+            <div class="glass">
+              <h3>Накратко</h3>
+              <p>Мога да помогна с:</p>
+              <div class="pillRow">
+                <span class="pill">Цялостен сайт</span>
+                <span class="pill">Портфолио</span>
+                <span class="pill">Front-end + Back-end</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="trust">
+                <div class="trustItem">
+                  <span class="wayIconStats"><img src="ontime.svg" alt="Ontime" /></span>
+                  <div>
+                    <strong>Навреме</strong>
+                    <span>Работа в ясно договорени срокове</span>
+                  </div>
+                </div>
+                <div class="trustItem">
+                  <span class="wayIconStats"><img src="flexible.svg" alt="Flexible" /></span>
+                  <div>
+                    <strong>Гъвкаво</strong>
+                    <span>Лесно надграждане и адаптация</span>
+                  </div>
+                </div>
+                <div class="trustItem">
+                  <span class="wayIconStats"><img src="stable.svg" alt="Flexible" /></span>
+                  <div>
+                    <strong>Стабилно</strong>
+                    <span>Оптимизирано за всяка платформа</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="marquee reveal" aria-hidden="true">
+          <div class="track">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animations</span><span>UX</span><span>Python</span><span>Performance</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Animations</span><span>UX</span><span>Python</span><span>Performance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contactCard reveal">
+          <div class="contactLeft">
+            <h2>Нека работим заедно</h2>
+            <p>
+              Свържете се с мен, за да обсъдим вашите цели и да преценим най-подходящото решение за <strong><span class="grad">Вашия уеб проект.</span></strong>
+            </p>
+
+            <div class="contactWays">
+              <div class="way copyEmail" data-email="mario.stanoychevv@gmail.com">
+                <span class="wayIconNew"><img src="email-logo.svg" alt="Instagram" /></span>
+                <span>
+                  <strong>Имейл</strong>
+                  <small>mario.stanoychevv@gmail.com</small>
+                </span>
+                <span class="copyIcon" aria-hidden="true">
+                  <img src="copied.svg" alt="">
+                </span>
+              </div>
+
+              <a class="way" href="tel:+359000000000">
+                <span class="wayIconNew"><img src="phone-logo.svg" alt="Instagram" /></span>
+                <span>
+                  <strong>Телефон за връзка</strong>
+                  <small>+359 12 3456 789</small>
+                </span>
+              </a>
+
+              <!-- <a class="way" href="https://www.instagram.com/mariostanoychev/" target="_blank" rel="noreferrer"> -->
+              <a class="way" href="" target="_blank" rel="noreferrer">
+                <span class="wayIconNew"><img src="instagram-logo.svg" alt="Instagram" /></span>
+                <span>
+                  <strong>Instagram</strong>
+                  <small></small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm"
+              class="contactForm"
+              action="https://formspree.io/f/xojevwzy"
+              method="POST">
+
+            <label>
+              <span>Име</span>
+              <input name="name" required />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required />
+            </label>
+
+            <label>
+              <span>Описание на проекта</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+
+            <input type="hidden" name="_subject" value="Ново запитване от сайта" />
+            <input type="hidden" name="_replyto" value="{{email}}" />
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button type="submit" class="cta primary">Изпрати запитване</button>
+            <div id="toast" class="toast" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot">
+        <span>© <span id="year"></span> ExcalForge</span>
+        <a href="#top" class="backTop">Нагоре ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
