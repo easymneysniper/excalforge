@@ -220,42 +220,100 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 
-const copyEmailEl = document.querySelector(".copyEmail");
-const iconEl = copyEmailEl?.querySelector(".copyIcon");
+// const copyEmailEl = document.querySelector(".copyEmail");
+// const iconEl = copyEmailEl?.querySelector(".copyIcon");
 
+// let copyTimer = null;
+
+// copyEmailEl?.addEventListener("click", async () => {
+//   const email = copyEmailEl.dataset.email;
+//   const small = copyEmailEl.querySelector("small");
+//   if (!email || !small || !iconEl) return;
+
+//   if (!small.dataset.original) small.dataset.original = small.textContent;
+
+//   if (copyTimer) {
+//     clearTimeout(copyTimer);
+//     copyTimer = null;
+//   }
+
+//   try {
+//     await navigator.clipboard.writeText(email);
+
+//     small.textContent = "Копирано!";
+//     iconEl.classList.add("isCopied");
+//     iconEl.innerHTML = "✅";
+
+//     copyTimer = setTimeout(() => {
+//       small.textContent = small.dataset.original;
+//       iconEl.classList.remove("isCopied");
+//       iconEl.innerHTML = `<img src="copied.svg" alt="">`;
+//       copyTimer = null;
+//     }, 1500);
+
+//   } catch {
+//     small.textContent = "Не успях да копирам";
+//     copyTimer = setTimeout(() => {
+//       small.textContent = small.dataset.original;
+//       copyTimer = null;
+//     }, 1500);
+//   }
+// });
+const copyEmailEl = document.querySelector(".copyEmail");
 let copyTimer = null;
+
+async function copyText(text) {
+  // Modern clipboard (работи най-добре на HTTPS)
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return true;
+  }
+
+  // Fallback за мобилни / HTTP / file://
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.top = "-9999px";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+
+  // важно за iOS
+  ta.focus();
+  ta.select();
+  ta.setSelectionRange(0, ta.value.length);
+
+  const ok = document.execCommand("copy");
+  document.body.removeChild(ta);
+
+  return ok;
+}
 
 copyEmailEl?.addEventListener("click", async () => {
   const email = copyEmailEl.dataset.email;
   const small = copyEmailEl.querySelector("small");
-  if (!email || !small || !iconEl) return;
+  const iconEl = copyEmailEl.querySelector(".copyIcon");
 
+  if (!email || !small || !iconEl) return;
   if (!small.dataset.original) small.dataset.original = small.textContent;
 
-  if (copyTimer) {
-    clearTimeout(copyTimer);
-    copyTimer = null;
-  }
+  if (copyTimer) clearTimeout(copyTimer);
 
   try {
-    await navigator.clipboard.writeText(email);
+    const ok = await copyText(email);
+    if (!ok) throw new Error("copy_failed");
 
     small.textContent = "Копирано!";
-    iconEl.classList.add("isCopied");
     iconEl.innerHTML = "✅";
 
     copyTimer = setTimeout(() => {
       small.textContent = small.dataset.original;
-      iconEl.classList.remove("isCopied");
       iconEl.innerHTML = `<img src="copied.svg" alt="">`;
-      copyTimer = null;
     }, 1500);
-
   } catch {
     small.textContent = "Не успях да копирам";
     copyTimer = setTimeout(() => {
       small.textContent = small.dataset.original;
-      copyTimer = null;
     }, 1500);
   }
 });
