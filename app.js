@@ -183,9 +183,49 @@ if (!reduceMotion) {
 const form = $('#contactForm');
 const toast = $('#toast');
 
+const emailEl = form?.querySelector('input[name="email"]');
+
+emailEl?.addEventListener('input', () => {
+  emailEl.value = sanitizeEmail(emailEl.value);
+});
+emailEl?.addEventListener('blur', () => {
+  emailEl.value = sanitizeEmail(emailEl.value);
+});
+
+
+function sanitizeEmail(raw) {
+  if (!raw) return raw;
+
+  // маха интервали и невидими whitespace
+  let v = String(raw).trim().replace(/\s+/g, '');
+
+  // заменя най-честите кирилски "двойници" с латински
+  const map = {
+    'а':'a','А':'A',
+    'е':'e','Е':'E',
+    'о':'o','О':'O',
+    'с':'c','С':'C',
+    'р':'p','Р':'P',
+    'х':'x','Х':'X',
+    'м':'m','М':'M',
+    'т':'t','Т':'T',
+    'к':'k','К':'K',
+    'у':'y','У':'Y',
+    'в':'b','В':'B',
+    'н':'h','Н':'H'
+  };
+
+  v = v.replace(/[аАеЕоОсСрРхХмМтТкКуУвВнН]/g, (ch) => map[ch] || ch);
+
+  return v;
+}
+
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!toast) return;
+
+  const emailInput = form.querySelector('input[name="email"]');
+  if (emailInput) emailInput.value = sanitizeEmail(emailInput.value);
 
   toast.textContent = '✅ Изпращам…';
   toast.classList.add('show');
