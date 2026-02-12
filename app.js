@@ -66,6 +66,19 @@ burger?.addEventListener('click', () => {
 });
 window.addEventListener('resize', closeMobileMenu);
 
+document.addEventListener('click', (e) => {
+  if (!menu || !burger) return;
+
+  if (!menu.classList.contains('show')) return;
+
+  const target = e.target;
+
+  if (menu.contains(target) || burger.contains(target)) return;
+
+  closeMobileMenu();
+});
+
+
 const tabs = $$('.tab');
 tabs.forEach(btn => {
   btn.addEventListener('click', () => {
