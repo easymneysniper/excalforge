@@ -2,6 +2,23 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const touchDevice = window.matchMedia('(hover: none)').matches;
+
+if (touchDevice && !reduceMotion) {
+  const brand = $('.brand');
+  let brandTapTimer;
+
+  brand?.addEventListener('click', () => {
+    brand.classList.remove('isTapped');
+    void brand.offsetWidth;
+    brand.classList.add('isTapped');
+
+    clearTimeout(brandTapTimer);
+    brandTapTimer = setTimeout(() => {
+      brand.classList.remove('isTapped');
+    }, 260);
+  });
+}
 
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
