@@ -393,7 +393,7 @@ function LoadingIntro({ active, reducedMotion }) {
               className="mottoLetter"
               d={letter.d}
               pathLength="1"
-              style={{ '--letter-delay': reducedMotion ? '0ms' : `${520 + letter.index * 38}ms` }}
+              style={{ '--letter-delay': reducedMotion ? '0ms' : `${340 + letter.index * 26}ms` }}
             />
           ))}
         </g>
@@ -402,7 +402,7 @@ function LoadingIntro({ active, reducedMotion }) {
   );
 }
 
-function Hero({ animationsReady, reducedMotion }) {
+function Hero({ animationsReady, reducedMotion, onNavigate }) {
   const [statsRef, active] = useAnimatedCounters(animationsReady);
   const [heroWordKey, setHeroWordKey] = useState(0);
 
@@ -435,8 +435,11 @@ function Hero({ animationsReady, reducedMotion }) {
           </p>
 
           <div className="heroCtas reveal">
-            <button className="cta ghost magnetic" type="button" onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span>Кой съм аз</span>
+            <button className="cta primary magnetic" type="button" onClick={() => onNavigate('#contact')}>
+              <span>Обсъди проект</span>
+            </button>
+            <button className="cta ghost magnetic" type="button" onClick={() => onNavigate('#work')}>
+              <span>Виж пример</span>
             </button>
           </div>
 
@@ -818,21 +821,47 @@ function Work() {
     <section id="work" className="section">
       <div className="container">
         <div className="sectionHead reveal">
-          <h2>Примерен проект</h2>
+          <div>
+            <p className="sectionEyebrow">Избран проект</p>
+            <h2>Портфолио с усещане за реален бранд</h2>
+          </div>
+          <p>Един примерен сайт, показан като case study - с визуален фокус, ясна структура и завършен потребителски поток.</p>
         </div>
 
-        <div className="cards">
-          <a className="workCard reveal" href="projects/sample-website/index.html" ref={ref} onPointerMove={onPointerMove}>
-            <div className="workMedia">
-              <div className="workMock mock1"></div>
+        <div className="cards premiumCase">
+          <a className="workCard caseStudy reveal" href="projects/sample-website/index.html" ref={ref} onPointerMove={onPointerMove}>
+            <div className="workMedia caseMedia">
+              <div className="caseBrowser">
+                <div className="caseTop">
+                  <span></span><span></span><span></span>
+                  <i>boutique.demo</i>
+                </div>
+                <div className="workMock mock1"></div>
+              </div>
               <div className="workGlow"></div>
             </div>
             <div className="workBody">
+              <p className="caseEyebrow">Fashion Boutique</p>
               <h3>Boutique</h3>
               <p>Елегантен бутик за дрехи с подбрани колекции, модерна визия и удобна заявка за личен стайлинг.</p>
+              <div className="caseHighlights">
+                <span>
+                  <strong>Визия</strong>
+                  <small>голям първи екран</small>
+                </span>
+                <span>
+                  <strong>Заявка</strong>
+                  <small>за личен стайлинг</small>
+                </span>
+                <span>
+                  <strong>Мобилно</strong>
+                  <small>удобно на телефон</small>
+                </span>
+              </div>
               <div className="workTags">
                 <span>Бутик</span><span>Мода</span><span>Стайлинг</span>
               </div>
+              <span className="caseLink">Разгледай проекта</span>
             </div>
           </a>
         </div>
@@ -1006,7 +1035,7 @@ export default function App() {
   useEffect(() => {
     const timer = window.setTimeout(() => {
       setIntroActive(false);
-    }, reducedMotion ? 650 : 3300);
+    }, reducedMotion ? 650 : 2400);
 
     return () => window.clearTimeout(timer);
   }, [reducedMotion]);
@@ -1032,7 +1061,7 @@ export default function App() {
       <Header onThemeToggle={toggleTheme} onNavigate={navigate} />
 
       <main className={introActive ? 'siteShell isWaiting' : 'siteShell isReady'}>
-        <Hero animationsReady={animationsReady} reducedMotion={reducedMotion} />
+        <Hero animationsReady={animationsReady} reducedMotion={reducedMotion} onNavigate={navigate} />
         <About />
         <Work />
         <Contact />
