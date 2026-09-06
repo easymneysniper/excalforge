@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import About from './components/About.jsx';
 import copiedIcon from './assets/icons/copied.svg';
 import emailIcon from './assets/icons/email-logo.svg';
 import facebookIcon from './assets/icons/facebook.svg';
@@ -13,15 +14,49 @@ const logoOfficialSrcSet = '/logo_official-512.png 512w, /logo_official-1024.png
 
 const navItems = [
   { href: '#work', label: 'Проекти' },
+  { href: '#pricing', label: 'Цени' },
   { href: '#about', label: 'За мен' },
   { href: '#contact', label: 'Контакт' }
 ];
 
-const skills = [
-  ['Back-end', 92],
-  ['Front-end', 85],
-  ['UI/UX', 85],
-  ['Motion / Interactions', 90]
+const pricingPlans = [
+  {
+    name: 'Лендинг страница',
+    label: 'За услуга или кампания',
+    price: '490 €',
+    description: 'Фокусирана страница, която представя една ясна оферта и води посетителя към конкретно действие.',
+    features: [
+      'Индивидуален дизайн',
+      'До 6 съдържателни секции',
+      'Контактна форма или основен CTA',
+      'Базова SEO и скоростна оптимизация'
+    ]
+  },
+  {
+    name: 'Бизнес уебсайт',
+    label: 'Най-предпочитан',
+    price: '890 €',
+    featured: true,
+    description: 'Завършено онлайн представяне за бизнес, който иска доверие, ясна структура и повече запитвания.',
+    features: [
+      'До 6 основни страници',
+      'Custom responsive дизайн',
+      'Форми, анимации и интеграции',
+      'Базова SEO настройка и публикуване'
+    ]
+  },
+  {
+    name: 'Онлайн магазин',
+    label: 'За продажби онлайн',
+    price: '1 490 €',
+    description: 'Функционален магазин с удобен продуктов каталог и ясен процес от разглеждането до поръчката.',
+    features: [
+      'Продуктов каталог и категории',
+      'Количка и управление на поръчки',
+      'Интеграции за плащане и доставка',
+      'Административен панел и обучение'
+    ]
+  }
 ];
 
 function useReducedMotion() {
@@ -607,264 +642,115 @@ function Marquee({ className = '' }) {
   );
 }
 
-function About() {
-  const [activeTab, setActiveTab] = useState('t1');
-  const [skillWaveKey, setSkillWaveKey] = useState(0);
 
-  const selectTab = (id) => {
-    setActiveTab(id);
-    if (id === 't3') setSkillWaveKey((key) => key + 1);
-  };
-
+function Work() {
   return (
-    <section id="about" className="section">
+    <section id="work" className="section projectSection">
       <div className="container">
-        <div className="sectionHead reveal">
-          <h2>За мен</h2>
-        </div>
+        <header className="projectHead reveal">
+          <p className="sectionEyebrow">Избрана работа · 01</p>
+          <h2>Boutique е демо проект. <span className="grad">И да — работи.</span></h2>
+          <p>
+            Направих го като пример за малък моден бранд. Можете да го отворите, разгледате и
+            натиснете — не е просто статична картинка.
+          </p>
+        </header>
 
-        <div className="aboutGrid">
-          <div className="aboutCard reveal">
-            <div className="aboutSignal" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <div className="tabs" role="tablist" aria-label="Табове за описание">
-              {[
-                ['t1', 'Кой съм'],
-                ['t2', 'Как работя'],
-                ['t3', 'Умения']
-              ].map(([id, label]) => (
-                <button
-                  key={id}
-                  className={`tab ${activeTab === id ? 'isActive' : ''}`}
-                  type="button"
-                  role="tab"
-                  aria-selected={activeTab === id}
-                  onClick={() => selectTab(id)}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            <div className="tabPanels">
-              <div className={`panel ${activeTab === 't1' ? 'isActive' : ''}`} id="t1" role="tabpanel">
-                <h3><span className="grad"><strong>ExcalForge</strong></span></h3>
-                <p>
-                  Разработвам уебсайтове за бизнеси и брандове, които търсят яснота, стабилност и дългосрочна стойност.
-                  Работя с фокус върху изчистен дизайн, логична структура и прецизна техническа реализация.
-                </p>
-                <p>
-                  За мен добрият сайт не е само красива визия. Той трябва да зарежда бързо, да води потребителя естествено и да бъде лесен
-                  за надграждане, когато бизнесът расте.
-                </p>
-                <p className="panelNote">
-                  Подхождам индивидуално към всеки проект, за да изградя решение, което изглежда професионално, работи стабилно и носи реална полза.
-                </p>
-                <ul className="bullets">
-                  <li>Сертифицирано обучение в елитна академия</li>
-                  <li>Бакалавър по "Софтуерно инженерство"</li>
-                  <li>Постоянно развитие и работа с актуални технологии и практики</li>
-                </ul>
+        <article className="projectFeature reveal">
+          <a
+            className="projectPreview"
+            href="projects/sample-website/index.html"
+            aria-label="Отворете демо проекта Boutique"
+          >
+            <div className="projectFrame">
+              <div className="projectFrameBar" aria-hidden="true">
+                <span>ExcalForge / selected work</span>
+                <span>boutique.demo ↗</span>
               </div>
-
-              <div className={`panel ${activeTab === 't2' ? 'isActive' : ''}`} id="t2" role="tabpanel">
-                <h3>Процесът ми включва следните стъпки:</h3>
-                <ol className="steps">
-                  <li><strong>Бриф</strong> - дефиниране на целите, аудиторията и изискванията</li>
-                  <li><strong>План</strong> - изграждане на ясна структура и технически план</li>
-                  <li><strong>Разработка</strong> - реализация с фокус върху качество и стабилност</li>
-                  <li><strong>Deploy</strong> - настройка на хостинг и пускане на проекта</li>
-                  <li><strong>Поддръжка</strong> - редовни обновления, техническа грижа и съдействие при нужда от промени или надграждане</li>
-                </ol>
-                <div className="note">Предлагам качествена изработка и постоянна поддръжка на Вашия сайт</div>
-              </div>
-
-              <div className={`panel ${activeTab === 't3' ? 'isActive' : ''}`} id="t3" role="tabpanel">
-                <h3>Умения</h3>
-                <p className="skillCopy">
-                  Комбинирам техническа разработка, визуален усет и внимание към детайла, за да превърна идеята в завършен уеб продукт.
-                  Работя така, че сайтът да бъде едновременно бърз, удобен и лесен за поддръжка.
-                </p>
-                <div className="skillGrid" key={skillWaveKey}>
-                  {skills.map(([name, pct], index) => (
-                    <div className="skill" key={name}>
-                      <div className="skillTop">
-                        <span>{name}</span><span className="pct">{pct}%</span>
-                      </div>
-                      <div
-                        className="meter"
-                        style={{
-                          '--skill-target': `${pct}%`,
-                          '--skill-delay': `${index * 120}ms`
-                        }}
-                      >
-                        <i></i>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="skillNotes">
-                  <span>Responsive layout</span>
-                  <span>Clean code</span>
-                  <span>Performance</span>
-                  <span>Animations</span>
-                </div>
-              </div>
+              <div className="workMock mock1"></div>
             </div>
+          </a>
+
+          <div className="projectNotes">
+            <div className="projectNotesTop">
+              <span>Демо проект</span>
+              <small>2026</small>
+            </div>
+            <h3>Boutique</h3>
+            <p className="projectStatement">Спокойна визия и ясен път до заявка за личен стайлинг.</p>
+            <p className="projectDescription">
+              Идеята беше да оставя снимките и колекциите да водят, а всичко останало да бъде леко,
+              четимо и удобно на телефон.
+            </p>
+
+            <dl className="projectDetails">
+              <div><dt>Роля</dt><dd>Дизайн и разработка</dd></div>
+              <div><dt>Фокус</dt><dd>Продукти и запитвания</dd></div>
+              <div><dt>Тип</dt><dd>Работеща концепция</dd></div>
+            </dl>
+
+            <a className="projectLink" href="projects/sample-website/index.html">
+              <span>Разгледайте сайта</span>
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
-
-          <aside className="aboutAside reveal">
-            <div className="glass">
-              <h3>Накратко</h3>
-              <p className="asideLead">Сайтове с ясна структура, бързо зареждане и лесна поддръжка.</p>
-              <div className="asideStats" aria-label="Кратки показатели">
-                <span>
-                  <strong>3+</strong>
-                  <small>год. опит</small>
-                </span>
-                <span>
-                  <strong>100%</strong>
-                  <small>custom код</small>
-                </span>
-              </div>
-
-              <p className="asideLabel">Мога да помогна с:</p>
-              <div className="pillRow">
-                <span className="pill">Цялостен сайт</span>
-                <span className="pill">Портфолио</span>
-                <span className="pill">Поддръжка на Вашия сайт</span>
-              </div>
-
-              <div className="divider"></div>
-
-              <div className="trust">
-                <Trust icon="time" title="Навреме" text="Ясно договорени срокове" />
-                <Trust icon="flex" title="Гъвкаво" text="Лесно надграждане" />
-                <Trust icon="stable" title="Стабилно" text="За всички устройства" />
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <Marquee className="onlyDesktop" />
+        </article>
       </div>
     </section>
   );
 }
 
-function Trust({ icon, title, text }) {
+function Pricing({ onNavigate }) {
   return (
-    <div className="trustItem">
-      <AnimatedTrustIcon type={icon} />
-      <div>
-        <strong>{title}</strong>
-        <span>{text}</span>
-      </div>
-    </div>
-  );
-}
-
-function AnimatedTrustIcon({ type }) {
-  if (type === 'time') {
-    return (
-      <span className="trustAnimIcon trustTime" aria-hidden="true">
-        <svg className="trustSvg" viewBox="0 0 40 40" focusable="false">
-          <circle className="trustLine" cx="18.5" cy="21" r="10.5" />
-          <path className="trustLine trustHand" d="M18.5 14.5v7l5.2 3" />
-          <circle className="trustBadge" cx="28.5" cy="12" r="6.2" />
-          <path className="trustAccent trustCheck" d="m25.6 12.1 2 2 4-4.2" />
-        </svg>
-      </span>
-    );
-  }
-
-  if (type === 'flex') {
-    return (
-      <span className="trustAnimIcon trustFlex" aria-hidden="true">
-        <svg className="trustSvg" viewBox="0 0 40 40" focusable="false">
-          <path className="trustLayer trustLayerBottom" d="M10 25.5 20 31l10-5.5" />
-          <path className="trustLayer trustLayerMiddle" d="M10 20.5 20 26l10-5.5" />
-          <path className="trustLayer trustLayerTop" d="M10 15.5 20 10l10 5.5-10 5.5-10-5.5Z" />
-          <path className="trustAccent trustPlus" d="M29.5 8.5v7M26 12h7" />
-        </svg>
-      </span>
-    );
-  }
-
-  return (
-    <span className="trustAnimIcon trustStable" aria-hidden="true">
-      <svg className="trustSvg" viewBox="0 0 40 40" focusable="false">
-        <rect className="trustShape trustDeviceDesktop" x="6.5" y="12" width="19" height="14.5" rx="3" />
-        <rect className="trustShape trustDevicePhone" x="28" y="14.5" width="6.8" height="13.8" rx="2.2" />
-        <path className="trustLine" d="M12.5 30.5h8.5" />
-        <path className="trustAccent trustCheck" d="m11.8 19.5 3.1 3.1 6.1-6.4" />
-      </svg>
-    </span>
-  );
-}
-
-function Work() {
-  const ref = useRef(null);
-
-  const onPointerMove = (event) => {
-    const card = ref.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    card.style.setProperty('--hx', `${(x / rect.width) * 100}%`);
-    card.style.setProperty('--hy', `${(y / rect.height) * 100}%`);
-  };
-
-  return (
-    <section id="work" className="section">
+    <section id="pricing" className="section pricingSection">
       <div className="container">
-        <div className="sectionHead reveal">
+        <div className="sectionHead pricingHead reveal">
           <div>
-            <p className="sectionEyebrow">Избран проект</p>
-            <h2>Портфолио с усещане за реален бранд</h2>
+            <p className="sectionEyebrow">Ориентировъчни пакети</p>
+            <h2>Ясен старт за Вашия нов уебсайт</h2>
           </div>
-          <p>Един примерен сайт, показан като case study - с визуален фокус, ясна структура и завършен потребителски поток.</p>
+          <p>Всеки проект е различен. Тези пакети дават реална начална рамка, а точната оферта се определя след кратко обсъждане.</p>
         </div>
 
-        <div className="cards premiumCase">
-          <a className="workCard caseStudy reveal" href="projects/sample-website/index.html" ref={ref} onPointerMove={onPointerMove}>
-            <div className="workMedia caseMedia">
-              <div className="caseBrowser">
-                <div className="caseTop">
-                  <span></span><span></span><span></span>
-                  <i>boutique.demo</i>
-                </div>
-                <div className="workMock mock1"></div>
+        <div className="pricingGrid">
+          {pricingPlans.map((plan) => (
+            <article
+              className={`priceCard reveal ${plan.featured ? 'isFeatured' : ''}`}
+              key={plan.name}
+            >
+              <div className="priceCardTop">
+                <span className="priceLabel">{plan.label}</span>
+                {plan.featured && <span className="popularBadge">Препоръчан</span>}
               </div>
-              <div className="workGlow"></div>
-            </div>
-            <div className="workBody">
-              <p className="caseEyebrow">Fashion Boutique</p>
-              <h3>Boutique</h3>
-              <p>Елегантен бутик за дрехи с подбрани колекции, модерна визия и удобна заявка за личен стайлинг.</p>
-              <div className="caseHighlights">
-                <span>
-                  <strong>Визия</strong>
-                  <small>голям първи екран</small>
-                </span>
-                <span>
-                  <strong>Заявка</strong>
-                  <small>за личен стайлинг</small>
-                </span>
-                <span>
-                  <strong>Мобилно</strong>
-                  <small>удобно на телефон</small>
-                </span>
+              <h3>{plan.name}</h3>
+              <p className="priceDescription">{plan.description}</p>
+              <div className="priceValue">
+                <small>от</small>
+                <strong>{plan.price}</strong>
               </div>
-              <div className="workTags">
-                <span>Бутик</span><span>Мода</span><span>Стайлинг</span>
-              </div>
-              <span className="caseLink">Разгледай проекта</span>
-            </div>
-          </a>
+              <ul className="priceFeatures">
+                {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
+              </ul>
+              <button
+                className={`cta priceCta ${plan.featured ? 'primary' : 'ghost'}`}
+                type="button"
+                onClick={() => onNavigate('#contact')}
+              >
+                <span>Изпратете запитване</span>
+              </button>
+            </article>
+          ))}
         </div>
+
+        <div className="pricingNote reveal">
+          <span className="pricingNoteIcon" aria-hidden="true">+</span>
+          <p>
+            Нуждаете се от поддръжка след публикуването? Месечните планове започват от <strong>75 €</strong> и се определят според нужния обем работа.
+          </p>
+        </div>
+        <p className="pricingFinePrint reveal">
+          Посочените цени са ориентировъчни. Домейн, хостинг, платени лицензи, съдържание и допълнителни интеграции се уточняват отделно.
+        </p>
       </div>
     </section>
   );
@@ -1062,8 +948,9 @@ export default function App() {
 
       <main className={introActive ? 'siteShell isWaiting' : 'siteShell isReady'}>
         <Hero animationsReady={animationsReady} reducedMotion={reducedMotion} onNavigate={navigate} />
-        <About />
+        <About reducedMotion={reducedMotion} coarsePointer={coarsePointer} onNavigate={navigate} />
         <Work />
+        <Pricing onNavigate={navigate} />
         <Contact />
         <Footer onNavigate={navigate} />
       </main>
