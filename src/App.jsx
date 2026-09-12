@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import About from './components/About.jsx';
+import Work from './components/Work.jsx';
 import copiedIcon from './assets/icons/copied.svg';
 import emailIcon from './assets/icons/email-logo.svg';
 import facebookIcon from './assets/icons/facebook.svg';
@@ -642,63 +643,6 @@ function Marquee({ className = '' }) {
   );
 }
 
-
-function Work() {
-  return (
-    <section id="work" className="section projectSection">
-      <div className="container">
-        <header className="projectHead reveal">
-          <p className="sectionEyebrow">Избрана работа · 01</p>
-          <h2>Boutique е демо проект. <span className="grad">И да — работи.</span></h2>
-          <p>
-            Направих го като пример за малък моден бранд. Можете да го отворите, разгледате и
-            натиснете — не е просто статична картинка.
-          </p>
-        </header>
-
-        <article className="projectFeature reveal">
-          <a
-            className="projectPreview"
-            href="projects/sample-website/index.html"
-            aria-label="Отворете демо проекта Boutique"
-          >
-            <div className="projectFrame">
-              <div className="projectFrameBar" aria-hidden="true">
-                <span>ExcalForge / selected work</span>
-                <span>boutique.demo ↗</span>
-              </div>
-              <div className="workMock mock1"></div>
-            </div>
-          </a>
-
-          <div className="projectNotes">
-            <div className="projectNotesTop">
-              <span>Демо проект</span>
-              <small>2026</small>
-            </div>
-            <h3>Boutique</h3>
-            <p className="projectStatement">Спокойна визия и ясен път до заявка за личен стайлинг.</p>
-            <p className="projectDescription">
-              Идеята беше да оставя снимките и колекциите да водят, а всичко останало да бъде леко,
-              четимо и удобно на телефон.
-            </p>
-
-            <dl className="projectDetails">
-              <div><dt>Роля</dt><dd>Дизайн и разработка</dd></div>
-              <div><dt>Фокус</dt><dd>Продукти и запитвания</dd></div>
-              <div><dt>Тип</dt><dd>Работеща концепция</dd></div>
-            </dl>
-
-            <a className="projectLink" href="projects/sample-website/index.html">
-              <span>Разгледайте сайта</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-  );
-}
 
 function Pricing({ onNavigate }) {
   return (
