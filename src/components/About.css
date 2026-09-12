@@ -263,6 +263,9 @@
 .forgeWorkbench[data-stage="0"] .forgeBlueprint { transform: translateZ(-25px); border-color: #9aeee0; }
 .forgeWorkbench[data-stage="0"] .forgeDesign { transform: translateZ(60px); opacity: .13; }
 .forgeWorkbench[data-stage="0"] .forgeWebsite { transform: translateZ(130px); opacity: .06; }
+.forgeWorkbench[data-stage="1"] .forgeBlueprint { opacity: .2; }
+.forgeWorkbench[data-stage="1"] .forgeDesign { border-color: #9aeee0; }
+.forgeWorkbench[data-stage="1"] .forgeWebsite { transform: translateZ(110px); opacity: .06; }
 .forgeWorkbench[data-stage="2"] .forgeAssembly { transform: rotateX(calc(12deg + var(--forge-pointer-y, 0deg))) rotateY(calc(-13deg + var(--forge-pointer-x, 0deg))) rotateZ(-4deg); }
 .forgeWorkbench[data-stage="2"] .forgeBlueprint { transform: translateZ(-6px); }
 .forgeWorkbench[data-stage="2"] .forgeDesign { transform: translateZ(0); }
