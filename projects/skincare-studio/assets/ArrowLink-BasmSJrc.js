@@ -1,0 +1,1 @@
+import{t as r,L as n}from"./index-DJc1tYqJ.js";import{A as a}from"./Seo-B_lA8TbS.js";function x({to:s,children:i,variant:o="solid",className:t=""}){return r.jsxs(n,{className:`arrow-link arrow-link--${o} ${t}`,to:s,children:[r.jsx("span",{children:i}),r.jsx(a,{size:19,strokeWidth:1.5})]})}export{x as A};

@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-background);
+}
+
+body.menu-open,
+body.lightbox-open {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-accent-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-deep);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 0.7rem;
+  left: 0.7rem;
+  padding: 0.65rem 1rem;
+  background: var(--color-text);
+  color: var(--color-white);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 70vh;
+}
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--space-section);
+}
+
+.section--small {
+  padding-block: var(--space-section-small);
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.image-frame img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease-editorial);
+}
+
+.image-frame:hover img {
+  transform: scale(1.035);
+}
+
+.page-hero {
+  min-height: calc(100svh - var(--header-height));
+  margin-top: var(--header-height);
+}
+
+.loading-screen {
+  display: grid;
+  min-height: 60vh;
+  place-items: center;
+}
+
+.loading-screen .brand-mark {
+  animation: breathe 1.6s ease-in-out infinite alternate;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .section { padding-block: clamp(4.5rem, 15vw, 7rem); }
+  .page-hero { margin-top: var(--header-height); }
+}

@@ -1,0 +1,158 @@
+﻿.home-hero {
+  display: grid;
+  min-height: 760px;
+  background: var(--color-surface-light);
+  grid-template-columns: minmax(38rem, 46%) 1fr;
+}
+
+.home-hero__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  padding: clamp(4.5rem, 7vw, 8rem) clamp(2.5rem, 5vw, 7rem);
+  padding-right: 2rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-hero__copy h1 { margin-block: 2rem 1.6rem; }
+.home-hero__line { display: block; overflow: hidden; }
+.home-hero__line > span { display: block; }
+.home-hero__copy .editorial-lead { max-width: 34rem; margin-bottom: 1.8rem; }
+.home-hero__copy .arrow-link { margin-bottom: 2.5rem; }
+
+.home-hero__image { position: relative; min-height: 100%; overflow: hidden; }
+.home-hero__image > img { width: 100%; height: 110%; object-fit: cover; object-position: center; }
+.home-hero__script { position: absolute; right: 5%; bottom: 10%; display: grid; color: var(--color-text); justify-items: center; gap: 1rem; }
+.home-hero__script .signature { color: var(--color-text); font-size: clamp(2.2rem, 3.5vw, 4.3rem); }
+.home-hero__script i { width: 3rem; height: 1px; margin-top: 0.5rem; background: var(--color-text); }
+.home-hero__script small { font-size: 0.6rem; line-height: 1.9; letter-spacing: 0.35em; text-align: center; }
+
+.principle-list { display: flex; gap: clamp(1.25rem, 3.2vw, 4rem); }
+.principle-list__item { display: flex; max-width: 8rem; color: var(--color-muted); font-size: 0.7rem; line-height: 1.35; text-align: center; flex-direction: column; align-items: center; gap: 0.75rem; }
+.principle-list__item svg { color: var(--color-accent-deep); }
+
+.home-procedures { background: var(--color-background); }
+.home-procedures__head { display: grid; margin-bottom: clamp(3rem, 5vw, 5rem); align-items: end; grid-template-columns: 1.2fr 0.8fr auto; gap: 3rem; }
+.home-procedures__head .section-intro { display: contents; }
+.home-procedures__head .section-intro .reveal-clip:first-child { grid-column: 1 / -1; }
+.home-procedures__head .section-intro .reveal-clip:nth-child(2) { grid-column: 1; }
+.home-procedures__head .section-intro .reveal-clip:nth-child(3) { grid-column: 2; }
+.home-procedures__head .section-intro h2 { font-size: clamp(3.8rem, 5.4vw, 6.2rem); }
+
+.procedure-editorial-grid { display: grid; align-items: start; grid-template-columns: 1.12fr 0.9fr 1.08fr 0.86fr; gap: clamp(0.7rem, 1.25vw, 1.4rem); }
+.procedure-feature { border-bottom: 1px solid var(--color-border); }
+.procedure-feature--2, .procedure-feature--4 { margin-top: 3.2rem; }
+.procedure-feature__image { display: block; height: clamp(250px, 25vw, 420px); }
+.procedure-feature--2 .procedure-feature__image, .procedure-feature--4 .procedure-feature__image { height: clamp(230px, 21vw, 350px); }
+.procedure-feature__copy { display: grid; padding-block: 1.4rem 1.6rem; grid-template-columns: 1fr auto; gap: 1rem; }
+.procedure-feature__copy h3 { margin-bottom: 0.65rem; font-size: clamp(1.7rem, 2vw, 2.3rem); }
+.procedure-feature__copy p { color: var(--color-muted); font-size: 0.8rem; line-height: 1.5; }
+.procedure-feature__arrow { display: grid; width: 44px; height: 44px; border: 1px solid var(--color-accent); border-radius: 50%; place-items: center; transition: color 0.35s ease, background 0.35s ease, transform 0.35s var(--ease-editorial); }
+.procedure-feature:hover .procedure-feature__arrow { color: white; background: var(--color-accent-deep); transform: rotate(7deg); }
+
+.home-about { display: grid; min-height: 760px; background: var(--color-surface-light); grid-template-columns: 0.78fr 1.1fr 0.58fr; }
+.home-about__copy { display: flex; padding: clamp(3rem, 6vw, 7rem); padding-right: clamp(2rem, 4vw, 4rem); flex-direction: column; justify-content: center; gap: 2rem; }
+.home-about__copy h2 { font-size: clamp(4rem, 6vw, 7.2rem); }
+.home-about__image { min-height: 690px; }
+.home-about__brand { display: flex; padding: 3rem 1.5rem; overflow: hidden; background: linear-gradient(160deg, var(--color-background-deep), #d8c7b7); flex-direction: column; align-items: center; justify-content: space-around; }
+.home-about__brand .signature { color: var(--color-text); font-size: clamp(2rem, 3.5vw, 4rem); text-align: center; }
+
+.philosophy-break { display: grid; min-height: 330px; border-block: 1px solid var(--color-border); background: var(--color-surface-light); grid-template-columns: 1.1fr 0.8fr 1fr; }
+.philosophy-break__image { min-height: 330px; }
+.philosophy-break__title, .philosophy-break__copy { display: flex; padding: clamp(2.5rem, 4vw, 4.5rem); flex-direction: column; justify-content: center; }
+.philosophy-break__title h2 { font-size: clamp(2.7rem, 4.3vw, 5rem); }
+.philosophy-break__title em { font-weight: 400; }
+.philosophy-break__copy { gap: 1.8rem; }
+.philosophy-break__copy p { color: var(--color-muted); }
+.philosophy-break__copy span { font-size: 0.58rem; letter-spacing: 0.34em; }
+
+.results-section { background: var(--color-background); }
+.results-section__layout { display: grid; align-items: start; grid-template-columns: 0.65fr 1.35fr; gap: clamp(3rem, 6vw, 7rem); }
+.results-section__intro { position: sticky; top: 130px; display: grid; gap: 2rem; }
+.results-section__intro h2 { font-size: clamp(3.6rem, 5vw, 6rem); }
+.results-section__stories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.result-story__visual { display: grid; height: clamp(310px, 29vw, 470px); grid-template-columns: 1fr 1fr; }
+.result-story figure { position: relative; margin: 0; overflow: hidden; }
+.result-story img { width: 100%; height: 100%; object-fit: cover; }
+.result-story figure span { position: absolute; bottom: 1rem; left: 1rem; padding: 0.35rem 0.55rem; color: white; background: rgba(38, 28, 23, 0.35); backdrop-filter: blur(8px); font-size: 0.58rem; letter-spacing: 0.19em; }
+.result-story h3 { margin-top: 1.2rem; font-size: 2rem; }
+.result-story > p { margin-top: 0.3rem; color: var(--color-muted); font-size: 0.77rem; }
+
+.home-reviews { border-block: 1px solid var(--color-border); background: var(--color-surface-light); }
+.home-reviews__layout { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(3rem, 6vw, 7rem); }
+.home-reviews__intro { display: grid; align-content: start; gap: 1.5rem; }
+.home-reviews__intro h2 { font-size: clamp(3.6rem, 5vw, 6rem); }
+.home-reviews__quotes { display: grid; grid-template-columns: repeat(3, 1fr); }
+.home-reviews blockquote { display: flex; min-height: 320px; margin: 0; padding: 1.5rem; border-left: 1px solid var(--color-border); flex-direction: column; }
+.home-reviews blockquote > span { color: var(--color-accent); font-family: var(--font-display); font-size: 4rem; line-height: 0.7; }
+.home-reviews blockquote p { margin-block: 1.2rem; color: var(--color-muted); font-size: 0.82rem; font-style: italic; }
+.home-reviews blockquote footer { display: grid; margin-top: auto; gap: 0.2rem; }
+.home-reviews blockquote strong { font-size: 0.78rem; }
+.home-reviews blockquote small { color: var(--color-accent-deep); font-size: 0.63rem; }
+
+.home-booking { display: grid; min-height: 520px; background: var(--color-surface-light); grid-template-columns: 1fr 1.1fr 0.8fr; }
+.home-booking__copy { display: flex; padding: clamp(3rem, 6vw, 6.5rem); flex-direction: column; justify-content: center; gap: 1.4rem; }
+.home-booking__copy h2 { font-size: clamp(3.4rem, 5vw, 5.8rem); }
+.home-booking__copy > p { color: var(--color-muted); }
+.home-booking__motto { display: flex; padding: 3rem; background-image: linear-gradient(rgba(247,243,237,.78), rgba(247,243,237,.78)), url('/images/serum-texture.webp'); background-size: cover; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem; text-align: center; }
+.home-booking__motto > span { font-size: 0.62rem; line-height: 2; letter-spacing: 0.3em; }
+.home-booking__motto .signature { font-size: 3.6rem; }
+
+@media (max-width: 1200px) {
+  .home-hero { grid-template-columns: 46% 54%; }
+  .home-hero__copy { padding-left: 5vw; }
+  .home-hero__script { display: none; }
+  .home-procedures__head { grid-template-columns: 1.15fr 0.85fr; }
+  .home-procedures__head > .arrow-link { grid-column: 2; }
+  .procedure-editorial-grid { grid-template-columns: repeat(2, 1fr); }
+  .procedure-feature--2, .procedure-feature--4 { margin-top: 2.5rem; }
+  .home-about { grid-template-columns: 0.9fr 1.1fr; }
+  .home-about__brand { display: none; }
+  .home-reviews__layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .home-hero { min-height: auto; grid-template-columns: 1fr; }
+  .home-hero__copy { min-height: 620px; padding: 5rem 5vw 3.5rem; }
+  .home-hero__copy h1 { margin-block: 1.6rem 1.3rem; }
+  .home-hero__copy .arrow-link { margin-bottom: 2rem; }
+  .home-hero__image { min-height: 76svh; }
+  .home-hero__image > img { height: 105%; object-position: 58% center; }
+  .principle-list { justify-content: space-between; }
+  .home-procedures__head { display: flex; align-items: flex-start; flex-direction: column; gap: 1.8rem; }
+  .home-procedures__head .section-intro { display: grid; }
+  .procedure-editorial-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .procedure-feature--2, .procedure-feature--4 { margin-top: 4rem; }
+  .procedure-feature__image, .procedure-feature--2 .procedure-feature__image, .procedure-feature--4 .procedure-feature__image { height: 52vw; }
+  .home-about { grid-template-columns: 1fr; }
+  .home-about__copy { padding: 5rem 5vw; }
+  .home-about__image { min-height: 72svh; }
+  .philosophy-break { grid-template-columns: 1fr 1fr; }
+  .philosophy-break__image { grid-row: span 2; }
+  .results-section__layout { grid-template-columns: 1fr; }
+  .results-section__intro { position: static; }
+  .home-reviews__quotes { overflow-x: auto; grid-template-columns: repeat(3, minmax(270px, 1fr)); scroll-snap-type: x mandatory; }
+  .home-reviews blockquote { scroll-snap-align: start; }
+  .home-booking { grid-template-columns: 1fr 1fr; }
+  .home-booking__image { min-height: 480px; }
+  .home-booking__motto { display: none; }
+}
+
+@media (max-width: 560px) {
+  .home-hero__copy { min-height: 570px; }
+  .home-hero__copy .editorial-lead { font-size: 0.92rem; }
+  .home-hero__image { min-height: 65svh; }
+  .principle-list__item { max-width: 6.2rem; font-size: 0.6rem; }
+  .principle-list__item svg { width: 22px; }
+  .procedure-feature__copy { grid-template-columns: 1fr; }
+  .procedure-feature__arrow { width: 38px; height: 38px; }
+  .philosophy-break { grid-template-columns: 1fr; }
+  .philosophy-break__image { min-height: 52svh; grid-row: auto; }
+  .philosophy-break__title, .philosophy-break__copy { padding: 2.5rem 5vw; }
+  .results-section__stories { grid-template-columns: 1fr; }
+  .result-story__visual { height: 390px; }
+  .home-booking { grid-template-columns: 1fr; }
+  .home-booking__image { min-height: 58svh; }
+  .home-booking__copy { padding: 4rem 5vw 5rem; }
+}

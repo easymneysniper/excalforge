@@ -2,6 +2,7 @@ import './Work.css';
 
 const crownedUrl = 'https://www.crowned.bg/';
 const boutiqueUrl = 'projects/sample-website/index.html';
+const skincareUrl = 'projects/skincare-studio/index.html';
 
 function CrownedPreview() {
   return (
@@ -41,15 +42,15 @@ export default function Work() {
     <section id="work" className="section selectedWork">
       <div className="container">
         <header className="selectedWorkHead reveal">
-          <p className="sectionEyebrow">Избрани проекти <span>01 — 02</span></p>
+          <p className="sectionEyebrow">Избрани проекти <span>01 — 03</span></p>
           <h2>От идея до<br /><span className="grad">работещ сайт.</span></h2>
-          <p className="selectedWorkIntro">Част от сайтовете, които съм изработил. Реален онлайн магазин и собствена концепция — всеки със своя цел и характер.</p>
+          <p className="selectedWorkIntro">Част от сайтовете, които съм изработил. Реален онлайн магазин и две собствени концепции — всяка със своя цел и характер.</p>
         </header>
 
         <article className="selectedWorkFeatured" aria-labelledby="crowned-project-title">
           <div className="reveal"><CrownedPreview /></div>
           <div className="selectedWorkStory reveal">
-            <div className="selectedWorkMeta"><span><i /> Реализиран проект</span><span>01 / 02</span></div>
+            <div className="selectedWorkMeta"><span><i /> Реализиран проект</span><span>01 / 03</span></div>
             <h3 id="crowned-project-title">CROWNED</h3>
             <p className="selectedWorkStatement">Лимитирани серии.<br />Собствен характер.</p>
             <p className="selectedWorkDescription">Онлайн магазин за български бранд с лимитирани шапки с бродерия. Продуктите и детайлите са на преден план — от разглеждането на колекциите до поръчката.</p>
@@ -69,9 +70,22 @@ export default function Work() {
           <a className="selectedWorkDemoLink" href={boutiqueUrl}>
             <div className="selectedWorkDemoImage" aria-hidden="true"><span>Boutique</span><small>PERSONAL STYLE / DIGITAL CONCEPT</small></div>
             <div className="selectedWorkDemoCopy">
-              <div className="selectedWorkDemoMeta"><span>02 / 02</span><span>Демо проект</span></div>
+              <div className="selectedWorkDemoMeta"><span>02 / 03</span><span>Демо проект</span></div>
               <h3 id="boutique-project-title">Boutique</h3>
               <p>Собствена концепция за моден бранд. Спокойна визия, колекции и ясен път до заявка за личен стайлинг.</p>
+              <span className="selectedWorkDemoRole">Дизайн и разработка</span>
+            </div>
+            <span className="selectedWorkDemoAction">Разгледайте демото <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+
+        <article className="selectedWorkDemo selectedWorkDemo--skincare reveal" aria-labelledby="skincare-project-title">
+          <a className="selectedWorkDemoLink" href={skincareUrl}>
+            <div className="selectedWorkDemoImage selectedWorkDemoImage--skincare" aria-hidden="true" />
+            <div className="selectedWorkDemoCopy">
+              <div className="selectedWorkDemoMeta"><span>03 / 03</span><span>Демо проект</span></div>
+              <h3 id="skincare-project-title">SKINCARE STUDIO</h3>
+              <p>Собствена концепция за бутиково студио за красота. Представяне на процедури, галерия и удобен път до запазване на час.</p>
               <span className="selectedWorkDemoRole">Дизайн и разработка</span>
             </div>
             <span className="selectedWorkDemoAction">Разгледайте демото <span aria-hidden="true">↗</span></span>

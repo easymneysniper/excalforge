@@ -1,0 +1,32 @@
+﻿.reviews-hero { display: grid; min-height: 730px; background: var(--color-surface-light); grid-template-columns: .9fr .85fr .65fr; }
+.reviews-hero__copy { display: flex; padding: clamp(4rem, 6vw, 7rem); flex-direction: column; justify-content: center; }
+.reviews-hero__copy h1 { margin-block: 1.5rem; font-size: clamp(4rem, 6.5vw, 7.5rem); }
+.reviews-hero__copy > p { max-width: 35rem; color: var(--color-muted); }
+.reviews-hero__portrait { min-height: 730px; }
+.reviews-hero__quote { display: flex; padding: clamp(2rem, 4vw, 4rem); border-left: 1px solid var(--color-border); background-image: linear-gradient(rgba(238,230,220,.86), rgba(238,230,220,.86)), url('/images/serum-texture.webp'); background-size: cover; flex-direction: column; justify-content: center; }
+.reviews-hero__quote > span { color: var(--color-accent); font-family: var(--font-display); font-size: 7rem; line-height: .6; }
+.reviews-hero__quote p { margin-block: 2rem; font-family: var(--font-display); font-size: clamp(1.7rem, 2.5vw, 2.7rem); font-style: italic; line-height: 1.2; }
+.reviews-hero__quote strong { font-size: .78rem; }
+.reviews-hero__quote small { margin-top: .3rem; color: var(--color-accent-deep); }
+.reviews-editorial__head { display: grid; margin-bottom: 5rem; align-items: end; grid-template-columns: 1fr .7fr; gap: 4rem; }
+.reviews-editorial__head h2 { margin-top: 1rem; }
+.reviews-editorial__head > p { color: var(--color-muted); }
+.reviews-editorial__grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, minmax(360px, auto)); gap: 1rem; }
+.review-story { position: relative; display: flex; margin: 0; padding: 2.2rem; border: 1px solid var(--color-border); flex-direction: column; }
+.review-story--2 { margin-top: 3rem; }
+.review-story--3 { grid-column: 2; }
+.review-story--4 { margin-top: -2rem; grid-column: 3; }
+.review-story__number { position: absolute; top: 1.5rem; right: 1.5rem; color: var(--color-accent); font-size: .59rem; letter-spacing: .2em; }
+.review-story > span { color: var(--color-accent); font-family: var(--font-display); font-size: 5rem; line-height: .7; }
+.review-story > p { margin-top: 1.5rem; color: var(--color-muted); font-family: var(--font-display); font-size: clamp(1.45rem, 2vw, 2rem); font-style: italic; line-height: 1.25; }
+.review-story footer { display: grid; margin-top: auto; gap: .2rem; }
+.review-story footer small { color: var(--color-accent-deep); }
+.review-story__image--one { grid-column: 1 / 2; grid-row: 2; }
+.review-story__image--two { grid-column: 3; grid-row: 2; }
+.review-story__image { min-height: 360px; }
+.reviews-philosophy { display: grid; min-height: 650px; background: var(--color-surface-light); grid-template-columns: 1.1fr .9fr; }
+.reviews-philosophy__copy { display: flex; padding: clamp(4rem, 7vw, 8rem); flex-direction: column; align-items: flex-start; justify-content: center; gap: 2rem; }
+.reviews-philosophy__copy .signature { font-size: clamp(3rem, 5vw, 6rem); }
+.reviews-philosophy__copy h2 { font-size: clamp(3.8rem, 5.5vw, 6.5rem); }
+@media (max-width: 980px) { .reviews-hero { grid-template-columns: 1fr 1fr; } .reviews-hero__quote { grid-column: 1 / -1; min-height: 370px; } .reviews-editorial__grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; } .review-story, .review-story--2, .review-story--3, .review-story--4, .review-story__image--one, .review-story__image--two { margin: 0; grid-column: auto; grid-row: auto; } }
+@media (max-width: 700px) { .reviews-hero { grid-template-columns: 1fr; } .reviews-hero__copy { min-height: 610px; padding: 5rem 5vw; } .reviews-hero__portrait { min-height: 65svh; } .reviews-hero__quote { grid-column: auto; } .reviews-editorial__head { grid-template-columns: 1fr; gap: 1.5rem; } .reviews-editorial__grid { display: flex; flex-direction: column; } .review-story { min-height: 360px; } .review-story__image { min-height: 65svh; } .review-story__image--two { order: 4; } .reviews-philosophy { grid-template-columns: 1fr; } .reviews-philosophy__image { min-height: 60svh; } .reviews-philosophy__copy { padding: 5rem 5vw; } }

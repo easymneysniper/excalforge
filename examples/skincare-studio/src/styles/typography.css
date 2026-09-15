@@ -1,0 +1,81 @@
+body {
+  font-family: var(--font-sans);
+  font-size: clamp(0.94rem, 0.9vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+.display-font {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+
+h1 {
+  font-size: clamp(4rem, 7.3vw, 8.3rem);
+}
+
+h2 {
+  font-size: clamp(3.1rem, 5vw, 6.4rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 2.5vw, 3rem);
+  line-height: 1.02;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-accent-deep);
+  font-size: 0.69rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2.3rem;
+  height: 1px;
+  background: currentColor;
+  content: '';
+}
+
+.signature {
+  color: var(--color-accent-deep);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.8;
+  transform: rotate(-7deg);
+}
+
+.editorial-lead {
+  max-width: 44rem;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: clamp(3.25rem, 15vw, 5rem); }
+  h2 { font-size: clamp(2.75rem, 13vw, 4.5rem); }
+  h3 { font-size: clamp(1.65rem, 8vw, 2.5rem); }
+  .eyebrow { font-size: 0.61rem; letter-spacing: 0.22em; }
+}

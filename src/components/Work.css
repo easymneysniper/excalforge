@@ -58,6 +58,7 @@
 .selectedWorkDemoImage { position: relative; display: flex; flex-direction: column; justify-content: space-between; align-self: stretch; min-height: 180px; padding: 20px; overflow: hidden; border: 1px solid var(--work-line); border-radius: 4px; color: #fff9ee; background: linear-gradient(130deg, rgba(24, 21, 18, .45), rgba(24, 21, 18, .18)), url('/boutique.jpg') center 38% / cover; }
 .selectedWorkDemoImage > span { font: 700 34px/1 Georgia, 'Times New Roman', serif; letter-spacing: -1px; }
 .selectedWorkDemoImage > small { font: 6px/1.5 ui-monospace, Consolas, monospace; letter-spacing: .1em; }
+.selectedWorkDemoImage--skincare { background: url('/projects/skincare-preview.jpg') center top / cover; }
 .selectedWorkDemoMeta { display: flex; align-items: center; gap: 18px; font: 9px/1.5 ui-monospace, Consolas, monospace; color: var(--muted2); }
 .selectedWorkDemoMeta > span:last-child { padding-left: 18px; border-left: 1px solid var(--work-line); }
 .selectedWorkDemoCopy h3 { margin: 12px 0 9px; font-size: 29px; line-height: 1; letter-spacing: -.035em; font-weight: 600; }
