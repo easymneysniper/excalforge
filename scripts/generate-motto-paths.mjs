@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 const TextToSVG = require('text-to-svg');
 
 const motto = 'Създавам сайтове, които оставят следа';
-const heroWord = 'уебсайтове';
+const heroWord = 'Уебсайтове';
 const cyrillicFontPath = path.join(process.cwd(), 'node_modules/@fontsource/manrope/files/manrope-cyrillic-700-normal.woff');
 const latinFontPath = path.join(process.cwd(), 'node_modules/@fontsource/manrope/files/manrope-latin-700-normal.woff');
 const outputPath = path.join(process.cwd(), 'src/mottoPaths.js');
