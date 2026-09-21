@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import About from './components/About.jsx';
 import Work from './components/Work.jsx';
+import Services from './components/Services.jsx';
 import copiedIcon from './assets/icons/copied.svg';
 import emailIcon from './assets/icons/email-logo.svg';
 import facebookIcon from './assets/icons/facebook.svg';
@@ -14,6 +15,7 @@ const logoOfficial = '/logo_official.png';
 const logoOfficialSrcSet = '/logo_official-512.png 512w, /logo_official-1024.png 1024w, /logo_official.png 1536w';
 
 const navItems = [
+  { href: '#services', label: 'Услуги' },
   { href: '#work', label: 'Проекти' },
   { href: '#pricing', label: 'Цени' },
   { href: '#about', label: 'За мен' },
@@ -462,12 +464,11 @@ function Hero({ animationsReady, reducedMotion, onNavigate }) {
           </div>
 
           <h1 className="headline reveal">
-            Изработка на <span className="headlineFocus"><HeroWord animationKey={heroWordKey} /> <span className="grad">с фокус върху качество</span></span>
+            <span className="headlineFocus"><HeroWord animationKey={heroWordKey} />, <span className="grad">системи и автоматизация</span></span> за Вашия бизнес.
           </h1>
 
           <p className="sub reveal">
-            Проектирам и разработвам бързи, модерни и надеждни уебсайтове - от лендинг страници до комплексни решения, с ясен
-            фокус върху дизайн, производителност и реална стойност за клиента.
+            Изграждам сайтове, които представят бизнеса Ви, и софтуер, който улеснява работата зад него. От първото запитване до автоматизираните задачи и поддръжката след старта.
           </p>
 
           <div className="heroCtas reveal">
@@ -573,17 +574,16 @@ function TiltCard() {
         </div>
 
         <div className="mini">
-          <div className="chip">Front-end</div>
-          <div className="chip">Back-end</div>
-          <div className="chip">UI/UX</div>
-          <div className="chip">Анимации</div>
+          <div className="chip">Уебсайтове</div>
+          <div className="chip">Системи</div>
+          <div className="chip">Автоматизация</div>
+          <div className="chip">Поддръжка</div>
         </div>
 
         <div className="cardText">
-          <h3><strong>Уебсайтове, изградени с внимание към детайла</strong></h3>
+          <h3><strong>Смислен дизайн. Полезен софтуер.</strong></h3>
           <p>
-            Работя с фокус върху плавни взаимодействия, ясна структура и изчистен визуален език. Всеки проект е оптимизиран за бързина,
-            достъпност и отлично потребителско изживяване на всички устройства.
+            Работите директно с мен — от идеята до публикуването. Подбираме точния обхват за Вашия бизнес и създаваме решение, удобно за клиентите и екипа Ви.
           </p>
         </div>
       </div>
@@ -650,7 +650,7 @@ function Pricing({ onNavigate }) {
       <div className="container">
         <div className="sectionHead pricingHead reveal">
           <div>
-            <p className="sectionEyebrow">Ориентировъчни пакети</p>
+            <p className="sectionEyebrow">Пакети за уебсайтове</p>
             <h2>Ясен старт за Вашия нов уебсайт</h2>
           </div>
           <p>Всеки проект е различен. Тези пакети дават реална начална рамка, а точната оферта се определя след кратко обсъждане.</p>
@@ -692,6 +692,9 @@ function Pricing({ onNavigate }) {
             Нуждаете се от поддръжка след публикуването? Месечните планове започват от <strong>75 €</strong> и се определят според нужния обем работа.
           </p>
         </div>
+        <p className="pricingFinePrint reveal">
+          За уеб приложения, CRM системи и автоматизации подготвям индивидуална оферта според процесите и интеграциите. <a href="#contact">Да обсъдим проекта →</a>
+        </p>
         <p className="pricingFinePrint reveal">
           Посочените цени са ориентировъчни. Домейн, хостинг, платени лицензи, съдържание и допълнителни интеграции се уточняват отделно.
         </p>
@@ -761,7 +764,7 @@ function Contact() {
           <div className="contactLeft">
             <h2>Нека работим заедно</h2>
             <p>
-              Свържете се с мен, за да обсъдим Вашите цели и да преценим най-подходящото решение за <strong><span className="grad">Вашия уеб проект.</span></strong>
+              Свържете се с мен, за да обсъдим Вашите цели и да преценим най-подходящото решение за <strong><span className="grad">Вашия бизнес.</span></strong>
             </p>
 
             <div className="contactWays">
@@ -799,7 +802,7 @@ function Contact() {
 
             <label>
               <span>Описание на проекта</span>
-              <textarea name="message" rows="5" required></textarea>
+              <textarea name="message" rows="5" placeholder="Какво Ви е нужно — сайт, система, автоматизация или поддръжка?" required></textarea>
             </label>
 
             <input type="hidden" name="_subject" value="Ново запитване от сайта" />
@@ -892,6 +895,7 @@ export default function App() {
 
       <main className={introActive ? 'siteShell isWaiting' : 'siteShell isReady'}>
         <Hero animationsReady={animationsReady} reducedMotion={reducedMotion} onNavigate={navigate} />
+        <Services />
         <About reducedMotion={reducedMotion} coarsePointer={coarsePointer} onNavigate={navigate} />
         <Work />
         <Pricing onNavigate={navigate} />

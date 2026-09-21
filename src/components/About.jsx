@@ -96,8 +96,8 @@ export default function About({ reducedMotion, coarsePointer, onNavigate }) {
         <div className="forgeLayout">
           <div className="forgeIntro reveal">
             <h2 id="forge-heading">Вашата идея.<br /><span>Моят почерк<i>.</i></span></h2>
-            <p className="forgeLead">Говорите с човека,<br />който прави сайта Ви.</p>
-            <p className="forgeBio">От първата скица до последния ред код — поемам целия път. Обичам ясния дизайн, смислените детайли и онова малко движение, което прави един сайт запомнящ се.</p>
+            <p className="forgeLead">Говорите с човека,<br />който изгражда проекта Ви.</p>
+            <p className="forgeBio">От първия разговор до работещия проект — поемам целия път. Разбирам как работи бизнесът Ви и съчетавам ясен дизайн с практичен софтуер — сайт, система или връзка между инструментите Ви.</p>
             <a className="forgeContact" href="#contact" onClick={(event) => { event.preventDefault(); onNavigate('#contact'); }}>
               Да обсъдим Вашата идея <span aria-hidden="true">↗</span>
             </a>

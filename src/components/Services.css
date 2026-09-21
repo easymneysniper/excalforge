@@ -1,0 +1,50 @@
+.servicesSection { --service-accent: #78e3d2; scroll-margin-top: 90px; }
+.servicesHeading { display: grid; grid-template-columns: .65fr 1.3fr 1fr; gap: 32px; align-items: end; margin-bottom: 48px; }
+.servicesHeading .sectionEyebrow { align-self: start; }
+.servicesHeading h2 { margin: 0; font-size: clamp(34px, 4vw, 52px); line-height: 1.12; letter-spacing: -.045em; }
+.servicesHeading > p:last-child { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.serviceRow { display: grid; grid-template-columns: .12fr 1fr .85fr; gap: 32px; padding: 34px 0; border-top: 1px solid var(--stroke); scroll-margin-top: 110px; }
+.serviceIndex { padding-top: 6px; color: var(--service-accent); font: 11px/1.5 ui-monospace, Consolas, monospace; }
+.serviceCopy h3 { margin: 0 0 12px; font-size: clamp(23px, 2.5vw, 30px); letter-spacing: -.035em; line-height: 1.2; }
+.serviceCopy p { max-width: 49ch; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.serviceLink { display: inline-flex; align-items: center; gap: 22px; min-height: 44px; margin-top: 14px; color: var(--service-accent); font-size: 12px; font-weight: 600; }
+.serviceLink > span { font-size: 21px; transition: transform .25s; }
+.serviceLink:hover > span { transform: translate(3px, -3px); }
+.serviceLink:focus-visible { outline: 2px solid var(--service-accent); outline-offset: 5px; }
+.serviceRow ul { list-style: none; margin: 0; padding: 0; align-self: center; }
+.serviceRow li { padding: 10px 0; border-bottom: 1px solid var(--stroke); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.serviceRow li:first-child { padding-top: 0; }
+.serviceRow li:last-child { border-bottom: 0; }
+.serviceSupporting { border-top: 1px solid var(--stroke); padding-top: 22px; margin: 0; color: var(--muted2); font-size: 12px; line-height: 1.9; }
+.systemsStory { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 6vw, 88px); padding-top: 90px; scroll-margin-top: 40px; }
+.systemsCopy h2 { margin: 18px 0 22px; font-size: clamp(30px, 3.5vw, 43px); line-height: 1.15; letter-spacing: -.04em; }
+.systemsCopy > p:not(.sectionEyebrow) { color: var(--muted); font-size: 14px; line-height: 1.85; }
+.workflowExample { border: 1px solid var(--stroke); border-radius: 7px; background: var(--card); overflow: hidden; scroll-margin-top: 110px; }
+.workflowBar { display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--stroke); padding: 16px 24px; color: var(--muted2); font: 9px/1.5 ui-monospace, Consolas, monospace; letter-spacing: .08em; }
+.workflowDots { display: flex; gap: 5px; }
+.workflowDots i { width: 5px; height: 5px; background: var(--muted2); border-radius: 50%; }
+.workflowBody { padding: 26px; }
+.workflowBody h3 { margin: 0 0 24px; font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
+.workflowSteps { padding: 0; margin: 0; list-style: none; }
+.workflowSteps li { display: grid; grid-template-columns: 30px 1fr; gap: 17px; position: relative; padding-bottom: 28px; }
+.workflowSteps li:not(:last-child)::after { content: '↓'; position: absolute; top: 32px; left: 9px; color: var(--service-accent); font: 16px/1 monospace; }
+.workflowSteps li > span { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--stroke); border-radius: 50%; color: var(--service-accent); font: 9px/1 monospace; }
+.workflowSteps strong { font-size: 14px; font-weight: 600; }
+.workflowSteps p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.workflowNote { border-top: 1px solid var(--stroke); margin: 0; padding-top: 16px; color: var(--muted2); font-size: 11px; line-height: 1.7; }
+[data-theme="light"] .servicesSection { --service-accent: #207e70; }
+@media (max-width: 960px) {
+  .servicesHeading { grid-template-columns: 1fr 1fr; }
+  .servicesHeading .sectionEyebrow { grid-column: 1 / -1; margin: 0; }
+  .serviceRow { grid-template-columns: 24px 1fr .8fr; gap: 20px; }
+  .systemsStory { gap: 30px; }
+}
+@media (max-width: 620px) {
+  .servicesHeading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 30px; }
+  .serviceRow { grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding: 26px 0; }
+  .serviceRow ul { grid-column: 2; }
+  .serviceCopy h3 { font-size: 24px; }
+  .systemsStory { grid-template-columns: minmax(0, 1fr); padding-top: 56px; }
+  .workflowBody { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .serviceLink > span { transition: none; transform: none; } }
